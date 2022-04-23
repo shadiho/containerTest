@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "shcluster-54af"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "shcluster-54af"
+  template:
+    metadata:
+      labels:
+        app: "shcluster-54af"
+    spec:
+      containers:
+        - name: "shcluster-54af"
+          image: "shadireg.azurecr.io/shcluster"
+          ports:
+          - containerPort: 80
